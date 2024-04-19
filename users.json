@@ -1,0 +1,19 @@
+{
+    "users": [
+      {
+        "username": "Benr",
+        "password": "Bug#234",
+        "role": "superAdmin"
+      },
+      {
+        "username": "0000000076",
+        "password": "23326",
+        "role": "Customer"
+      },
+      {
+        "username": "Granth",
+        "password": "ghtc#45",
+        "role": "RCM"
+      }
+    ]
+  }
