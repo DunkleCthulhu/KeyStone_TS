@@ -23,9 +23,16 @@ test.beforeEach (async ({page}) => {
     
   })
 
-  test ("Check subtitle", async ({page}) => {
+  test ("Check main block", async ({page}) => {
     const processPage = new ProcessPage (page);
     await expect (processPage.subtitle).toContainText("7400 - QDH/Model Complete");
+
+  } )
+
+  test ("Check header", async ({page}) => {
+    const processPage = new ProcessPage (page);
+    await expect (processPage.subtitle).toContainText("7400 - QDH/Model Complete");
+    
   } )
 
 

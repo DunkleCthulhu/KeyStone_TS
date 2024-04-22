@@ -20,6 +20,9 @@ export class ProcessPage {
         this.burgerMenu = page.locator("//div[@class='burger__container']");
         this.jobTitleName = page.locator("//p[@class='header--title header--title-dots']");
         this.subtitle = page.locator("//p[@class='subtitle']");
+        this.userAvatar = page.locator("//div[@class='user-info user-info-without-name']//div[contains(@class, 'avatar')]");
+        this.userName = page.locator("//p[@class='user-info--name']");
+        this.notificationsButton = page.locator("//div[@class='notification']");
         
     }
 
