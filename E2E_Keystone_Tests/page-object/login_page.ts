@@ -19,15 +19,15 @@ export class LoginPage {
     constructor(page: Page) {
         this.page = page;
         this.loginButton = page.locator("//button[text()='Login']");
-        this.userNameField = page.locator("//input[@class='input']");
-        this.passwordField = page.locator("//input[@class='input password-input']");
+        this.userNameField = page.locator("//div[@class='input-wr']/input[@placeholder='Username']");
+        this.passwordField = page.locator("//div[@class='input-wr password-wr']/input[@placeholder='Password']");
         this.logo = page.locator("//div[@class='logo']");
         this.signInText = page.locator("//div[text()='Sign In']");
-        this.hintUsernameText = page.locator("//li[@class='error']");
-        this.hintPasswordText = page.locator("//li[@class='error']");
-        this.invalidCredsText = page.locator("//li[text()='Invalid username or password']");
-        this.usernameLable = page.locator("//label[normalize-space()='Username']");
-        this.passwordLable = page.locator("//label[normalize-space()='Password']");
+        this.hintUsernameText = page.locator("//div[@class='input-wr']/div[@class='error-message']");
+        this.hintPasswordText = page.locator("//div[@class='input-wr password-wr']/div[@class='error-message']");
+        this.invalidCredsText = page.locator("//div[@class='error-message']");
+        // this.usernameLable = page.locator("//label[normalize-space()='Username']");
+        // this.passwordLable = page.locator("//label[normalize-space()='Password']");
         this.showHideButton = page.locator("//div[contains(@class, 'eye-icon')]");
     }
 
@@ -38,6 +38,16 @@ export class LoginPage {
 
     async clickLogin() {
         await this.loginButton.click();
+    }
+
+    async clearFields() {
+        await this.userNameField.click();
+        await this.userNameField.selectText();
+        await this.userNameField.press("Backspace")
+        await this.passwordField.click();
+        await this.passwordField.selectText();
+        await this.passwordField.press("Backspace");
+        
     }
 
      
