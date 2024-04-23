@@ -7,10 +7,7 @@ test.beforeEach(async ({page}) => {
   const loginPage = new LoginPage (page);
   await page.goto(baseUrl);
   await expect(loginPage.logo).toBeVisible();
-  await expect(loginPage.signInText).toContainText("Sign In");
-  // await expect(loginPage.usernameLable).toHaveText("Username");
-  // await expect(loginPage.passwordLable).toHaveText("Password");
-
+  await expect(loginPage.signInText).toContainText("Sign In");  
 })
 
 test ("Check valid login", async ({page}) => {

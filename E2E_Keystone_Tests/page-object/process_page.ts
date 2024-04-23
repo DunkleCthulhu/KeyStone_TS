@@ -14,6 +14,9 @@ export class ProcessPage {
     readonly documentsTab: Locator;
     readonly teamTab: Locator;
     readonly subtitle: Locator;
+    readonly scheduleProcess: Locator;
+    readonly schedulePercent: Locator;
+    readonly progressBar: Locator;
     
     constructor(page: Page) {
         this.page = page;
@@ -23,6 +26,11 @@ export class ProcessPage {
         this.userAvatar = page.locator("//div[@class='user-info user-info-without-name']//div[contains(@class, 'avatar')]");
         this.userName = page.locator("//p[@class='user-info--name']");
         this.notificationsButton = page.locator("//div[@class='notification']");
+        this.headerLogo = page.locator("//img[@alt='Keystone']");
+        this.scheduleProcess = page.locator("//div[@class='progress-bar-header-description']");
+        this.schedulePercent = page.locator("//div[@class='progress-bar-header-percent']");
+        this.progressBar = page.locator("//div[@class='progress-bar-inner-line']");
+        
         
     }
 

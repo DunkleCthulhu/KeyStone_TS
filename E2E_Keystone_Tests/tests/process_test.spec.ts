@@ -21,19 +21,19 @@ test.beforeEach (async ({page}) => {
     await burgerMenu.navigateToSelectedJob(); 
     await expect(processPage.jobTitleName).toContainText(jobName);
     
-  })
+  })  
+
+  test ("Check header", async ({page}) => {
+    const processPage = new ProcessPage (page);
+    const userName = "Ben Rutt"
+    await expect (processPage.userAvatar).toBeVisible();
+    await expect (processPage.userName).toContainText(userName);
+    await expect (processPage.headerLogo).toBeVisible();
+    await expect (processPage.notificationsButton).toBeVisible();    
+  } )
 
   test ("Check main block", async ({page}) => {
     const processPage = new ProcessPage (page);
     await expect (processPage.subtitle).toContainText("7400 - QDH/Model Complete");
-
-  } )
-
-  test ("Check header", async ({page}) => {
-    const processPage = new ProcessPage (page);
-    await expect (processPage.subtitle).toContainText("7400 - QDH/Model Complete");
-    
-  } )
-
-
-
+    await expect(processPage.scheduleProcess).toContainText("Schedule Process");
+  })
